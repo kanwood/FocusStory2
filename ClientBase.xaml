@@ -1,0 +1,33 @@
+﻿<Window x:Class="FocusStory.ClientBase"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FocusStory"
+        mc:Ignorable="d"
+        Title="ClientBase" Height="400" Width="700">
+    <Grid>
+        <Image Source="/1679524530_bogatyr-club-p-cherno-fioletovie-oboi-foni-krasivo-62.jpg" Stretch="Fill"/>
+        <DataGrid x:Name="DGClient" AutoGenerateColumns="False" IsReadOnly="True" Margin="0,0,0,76">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID" Binding="{Binding idClient}" Width="50"/>
+                <DataGridTextColumn Header="Имя" Binding="{Binding nameClient}" Width="80"/>
+                <DataGridTextColumn Header="Фамилия" Binding="{Binding surnameClient}" Width="150" />
+                <DataGridTextColumn Header="Отчество" Binding="{Binding patronymicClient}" Width="*" />
+                <DataGridTextColumn Header="Номер телефона" Binding="{Binding phoneNumber}" Width="70" />
+                <DataGridTextColumn Header="Адрес" Binding="{Binding address}" Width="70" />
+                <DataGridTextColumn Header="Дата доставки" Binding="{Binding time}" Width="70" />
+                <DataGridTemplateColumn>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Content="Редактировать" FontFamily="Lucida Console" FontSize="18" Background="WhiteSmoke" Name="EditItem" Click="EditItem_Click" ></Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button Content="Вернуться" FontFamily="Lucida Console" FontSize="18" Background="WhiteSmoke" Click="outmenu" HorizontalAlignment="Left" Margin="549,317,0,0" VerticalAlignment="Top" Height="38" Width="141"/>
+        <Button Content="Добавить" FontFamily="Lucida Console" FontSize="18" Background="WhiteSmoke" x:Name="AddItem" Click="AddItem_Click" HorizontalAlignment="Left" Margin="20,317,0,0" VerticalAlignment="Top" Height="38" Width="141"/>
+        <Button Content="Удалить" FontFamily="Lucida Console" FontSize="18" Background="WhiteSmoke" x:Name="RemoveItem" Click="RemoveItem_Click" HorizontalAlignment="Left" Margin="198,317,0,0" VerticalAlignment="Top" Height="38" Width="141"/>
+    </Grid>
+</Window>

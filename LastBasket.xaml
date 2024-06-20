@@ -1,0 +1,38 @@
+﻿<Window x:Class="FocusStory.LastBasket"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FocusStory"
+        mc:Ignorable="d"
+        Title="LastBasket" Height="600" Width="1000">
+    <Grid>
+        <Image Source="/1679524530_bogatyr-club-p-cherno-fioletovie-oboi-foni-krasivo-62.jpg" Stretch="Fill"/>
+        <DataGrid x:Name="DGClient1" AutoGenerateColumns="False" IsReadOnly="True" Margin="0,56,553,79">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID" Binding="{Binding idClient}" Width="*"/>
+                <DataGridTextColumn Header="Имя" Binding="{Binding nameClient}" Width="*"/>
+                <DataGridTextColumn Header="Фамилия" Binding="{Binding surnameClient}" Width="*" />
+                <DataGridTextColumn Header="Отчество" Binding="{Binding patronymicClient}" Width="*" />
+                <DataGridTextColumn Header="Номер телефона" Binding="{Binding phoneNumber}" Width="*" />
+                <DataGridTextColumn Header="Адрес" Binding="{Binding address}" Width="*" />
+                <DataGridTextColumn Header="Дата доставки" Binding="{Binding time}" Width="*" />
+            </DataGrid.Columns>
+        </DataGrid>
+        <DataGrid x:Name="DGBasket" AutoGenerateColumns="False" IsReadOnly="True" Margin="447,56,0,79">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID" Binding="{Binding idItem}" Width="50"/>
+                <DataGridTextColumn Header="Штрихкод" Binding="{Binding barcode}" Width="80"/>
+                <DataGridTextColumn Header="Наименование" Binding="{Binding name}" Width="150" />
+                <DataGridTextColumn Header="Описание" Binding="{Binding discription}" Width="150" />
+                <DataGridTextColumn Header="Категория" Binding="{Binding category}" Width="*" />
+                <DataGridTextColumn Header="Цена" Binding="{Binding price}" Width="70" />
+            </DataGrid.Columns>
+        </DataGrid>
+        <Label FontFamily="Lucida Console" FontSize="25" Foreground="WhiteSmoke" Content="Данные об клиенте:" HorizontalAlignment="Left" Margin="77,10,0,0" VerticalAlignment="Top" Height="41" Width="293"/>
+        <Label FontFamily="Lucida Console" FontSize="25" Foreground="WhiteSmoke" Content="Данные об заказе:" HorizontalAlignment="Left" Margin="588,10,0,0" VerticalAlignment="Top" Height="41" Width="272"/>
+        <Button  Content="Распечатать чек" FontFamily="Lucida Console" FontSize="18" Background="WhiteSmoke" x:Name="check" Click="check_Click" HorizontalAlignment="Left" Height="41" Margin="779,528,0,0" VerticalAlignment="Top" Width="190"/>
+        <TextBox x:Name="totalpricename" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="342,528,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="210" Height="41"/>
+        <Label FontFamily="Lucida Console" FontSize="25" Foreground="WhiteSmoke" Content="Общая цена:" HorizontalAlignment="Left" Margin="159,529,0,0" VerticalAlignment="Top" Height="41" Width="178"/>
+    </Grid>
+</Window>
